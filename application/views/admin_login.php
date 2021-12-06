@@ -18,7 +18,6 @@
 <div class="header">
   <div class="am-g">
     <h1><?php echo $this->config->item('site_name'); ?></h1>
-    <p><?php echo $this->config->item('base_url'); ?></p>
   </div>
   <br>
 </div>
