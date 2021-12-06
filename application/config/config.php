@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | 网站域名，本地测试配置为 http://127.0.0.1/ 或 http://localhost/
 |--------------------------------------------------------------------------
 */
-$config['base_url'] = 'http://appsversionupdate.test.com/';
+$config['base_url'] = 'http://localhost/';
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ $config['site_name'] = '客户端版本更新管理系统';
 | 网站版权信息
 |--------------------------------------------------------------------------
 */
-$config['copyright'] = '© 2015 JianLiu';
+$config['copyright'] = '© 2021 U2tzJTNE';
 
 
 /*
