@@ -38,16 +38,7 @@
       <br>
       <label>密码:</label>
       <input type="password" name="password" value="<?php echo set_value('password'); ?>">
-      <br>
-      <label for="email">验证码:</label>   
-      <div class="am-form-group">
-        <div class="am-u-sm-2 am-padding-0">
-          <input type="text" name="captcha" value="">
-        </div>
-        <div class="am-u-sm-10 am-animation-fade">
-          <?php echo $cap_img_html; ?>
-        </div>
-      </div>
+      <br> 
       <br><br>
       <div class="am-cf">
         <input type="submit" value="登 录" class="am-btn am-btn-primary am-fl">

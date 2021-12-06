@@ -28,15 +28,11 @@ class Admin extends CI_Controller {
 		if(!empty($_POST)){
 			$account = $this->input->post('account');
 			$password = $this->input->post('password');
-			$captcha = $this->input->post('captcha');
-			if(empty($account) || empty($password) || empty($captcha)){
+			// $captcha = $this->input->post('captcha');
+			if(empty($account) || empty($password)){
 				$data['errmsg'] = '表单不能为空';
 			}else{
-				$cap_word = $this->session->cap_word;
-				if($captcha!=$cap_word){
-					$data['errmsg'] = '验证码错误';
-				}else{
-					$row = $this->admin_model->get_manager_row_by_verify();
+				$row = $this->admin_model->get_manager_row_by_verify();
 					if(is_null($row)){
 						$data['errmsg'] = '账号或密码错误';
 					}else{
@@ -45,21 +41,8 @@ class Admin extends CI_Controller {
 						$base_url = $this->config->item('base_url');
 						header("Location: {$base_url}admin/app_list");
 					}
-				}
 			}
 		}
-
-		/* 验证码开始 */
-		$this->load->helper('config_captcha');
-		$this->load->helper('captcha');
-		$img_path = FCPATH.'static/captcha/';
-		$img_url = $this->config->item('base_url').'static/captcha/';
-		$cfg = config_captcha($img_path, $img_url);
-		$cap = create_captcha($cfg);
-		$data['cap_img_html'] = $cap['image'];
-		$this->session->cap_word = $cap['word'];
-		/* 验证码开始 */
-
 		$data['base_url'] = $this->config->item('base_url');
 		$data['title'] = '用户登录';
 		$this->load->view('admin_login.php', $data);
