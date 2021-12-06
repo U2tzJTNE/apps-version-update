@@ -14,14 +14,6 @@
         <li><a href="<?php echo $base_url; ?>admin/change_pwd" class="am-cf"><span class="am-icon-edit"></span> 修改密码</a></li>
         <li><a href="<?php echo $base_url; ?>admin/quit" class="am-cf"><span class="am-icon-sign-out"></span> 退出</a></li>
       </ul>
-
-      <div class="am-panel am-panel-default admin-sidebar-panel">
-        <div class="am-panel-bd">
-          <p><span class="am-icon-bookmark"></span> 公告</p>
-          <p>时光静好，与君语；细水流年，与君同。</p>
-        </div>
-      </div>
-
     </div>
   </div>
   <!-- sidebar end -->
