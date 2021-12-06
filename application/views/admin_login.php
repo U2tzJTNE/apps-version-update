@@ -39,7 +39,6 @@
       <label>密码:</label>
       <input type="password" name="password" value="<?php echo set_value('password'); ?>">
       <br> 
-      <br><br>
       <div class="am-cf">
         <input type="submit" value="登 录" class="am-btn am-btn-primary am-fl">
       </div>
