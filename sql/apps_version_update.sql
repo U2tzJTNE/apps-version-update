@@ -58,7 +58,7 @@ CREATE TABLE `versions` (
   `version` varchar(20) NOT NULL COMMENT '版本号',
   `code` int(6) NOT NULL COMMENT '版本编号',
   `file_size` int(10) unsigned NOT NULL COMMENT '文件大小',
-  `content` varchar(500) NOT NULL COMMENT '更新内容-中文',
+  `content` varchar(500) NOT NULL COMMENT '更新内容',
   `compel` tinyint(1) NOT NULL COMMENT '强制更新',
   `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
