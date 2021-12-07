@@ -79,8 +79,7 @@ class Admin_model extends CI_Model {
 			'version' => $this->input->post('version') ,
 			'code' => $this->input->post('code') ,
 			'file_size' => $image['file_size']*1024 ,
-			'content_cn' => $this->input->post('content_cn') ,
-			'content_en' => $this->input->post('content_en') ,
+			'content' => $this->input->post('content') ,
 			'compel' => (int)$this->input->post('compel') ,
 			'datetime' => date('Y-m-d H:i:s')
 		);
@@ -104,8 +103,7 @@ class Admin_model extends CI_Model {
 		$data = array(
 			'version' => $this->input->post('version') ,
 			'code' => $this->input->post('code') ,
-			'content_cn' => $this->input->post('content_cn') ,
-			'content_en' => (string)$this->input->post('content_en') ,
+			'content' => $this->input->post('content') ,
 			'compel' => (int)$this->input->post('compel') ,
 			'datetime' => date('Y-m-d H:i:s')
 		);

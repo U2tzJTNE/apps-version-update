@@ -28,11 +28,7 @@
           <p><input type="text" name="code" class="am-form-field js-pattern-number" placeholder="版本编号" value="<?php echo set_value('code', isset($row)?$row->code:''); ?>" required/></p>
           
          	  <div class="am-form-group">
-              <textarea class="" name="content_cn" rows="5" placeholder="更新内容-中文" required><?php echo set_value('content_cn', isset($row)?$row->content_cn:''); ?></textarea>
-            </div>
-            
-         	  <div class="am-form-group">
-              <textarea class="" name="content_en" rows="5" placeholder="更新内容-英文"><?php echo set_value('content_en', isset($row)?$row->content_en:''); ?></textarea>
+              <textarea class="" name="content" rows="5" placeholder="更新内容" required><?php echo set_value('content', isset($row)?$row->content:''); ?></textarea>
             </div>
 
             <label class="am-checkbox">

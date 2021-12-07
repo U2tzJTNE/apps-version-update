@@ -29,11 +29,6 @@ CREATE TABLE `apps` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='APP列表';
 
 -- ----------------------------
--- Records of apps
--- ----------------------------
-INSERT INTO `apps` VALUES ('1', '我的APP', '我需要自动更新的APP', '0', '2015-12-21 09:04:38');
-
--- ----------------------------
 -- Table structure for `manager`
 -- ----------------------------
 DROP TABLE IF EXISTS `manager`;
@@ -50,7 +45,7 @@ CREATE TABLE `manager` (
 -- ----------------------------
 -- Records of manager
 -- ----------------------------
-INSERT INTO `manager` VALUES ('1', 'admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', '管理员', '0');
+INSERT INTO `manager` VALUES ('1', 'admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'admin', '0');
 
 -- ----------------------------
 -- Table structure for `versions`
@@ -63,8 +58,7 @@ CREATE TABLE `versions` (
   `version` varchar(20) NOT NULL COMMENT '版本号',
   `code` int(6) NOT NULL COMMENT '版本编号',
   `file_size` int(10) unsigned NOT NULL COMMENT '文件大小',
-  `content_cn` varchar(500) NOT NULL COMMENT '更新内容-中文',
-  `content_en` varchar(500) NOT NULL COMMENT '更新内容-英文',
+  `content` varchar(500) NOT NULL COMMENT '更新内容-中文',
   `compel` tinyint(1) NOT NULL COMMENT '强制更新',
   `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),

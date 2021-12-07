@@ -69,7 +69,7 @@ class Export extends CI_Controller {
 			'url' => "{$base_url}{$this->app_path}/{$row->file_name}" ,
 			'file_size' => $row->file_size ,
 			'compel' => $row->compel ,
-			'context' => $lang==0?$row->content_cn:$row->content_en
+			'context' => $row->content
 		);
 		echo json_encode_ex($arr);
 	}

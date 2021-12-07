@@ -4,14 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller {
 
 	private $app_path = '';  // app存放路径
-	private $filename_prefix = '';  // 文件名前缀
 
 	function __construct(){
 		parent::__construct();
 		$this->load->model('admin_model');
 		$this->load->library('form_validation');
 		$this->app_path = $this->config->item('storage_dir');  // 载入配置
-		$this->filename_prefix = $this->config->item('filename_prefix');  // 载入配置
 	}
 
 	public function index(){
@@ -187,16 +185,15 @@ class Admin extends CI_Controller {
 		if(!empty($_POST)){
 			$version = $this->input->post('version');
 			$code = $this->input->post('code');
-			$content_cn = $this->input->post('content_cn');
-			$content_en = $this->input->post('content_en');
-			if(empty($version) || !preg_match($mode, $code) || empty($content_cn)){
+			$content = $this->input->post('content');
+			if(empty($version) || !preg_match($mode, $code) || empty($content)){
 				$data['errcode'] = 1;
 				$data['errmsg'] = '内容不能为空 或 内容不正确';
 			}else{
 
 				/* 上传开始 */
 				$config['upload_path'] = FCPATH.$this->app_path;
-				$config['file_name'] = "{$this->filename_prefix}__p{$appid}__v{$version}.apk";
+				$config['file_name'] = "p{$appid}_v{$version}_u{$code}.apk";
 				$config['allowed_types'] = 'apk';
 				$config['overwrite'] = true;  // 覆盖已存在
 				$this->load->library('upload', $config);
